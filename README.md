@@ -52,25 +52,25 @@ RUN chmod +x /app/run_semgrep.sh
 # Set the default entry point
 ENTRYPOINT ["/app/run_semgrep.sh"]
 
-## **3.What This Dockerfile Does
+**## **2. What does the docker image do****
 Uses the latest official Semgrep image.
 Copies the script into the container.
 Ensures the script is executable.
 Sets the script as the container's entry point.
 
-## **4. Build the Docker Image
+**## **3.Buld Docker Image****
 Run the following command to build the Docker image:
 docker build -t semgrep-runner .
 Further Ensure Unix Line Endings (Windows Users Only)
 If you're using Windows, convert the script to Unix format to avoid execution errors: 
 **dos2unix run_semgrep.sh**
 
-## **5.Final Command:
+**## **4. Final Steps****
 docker run --rm -v "$(pwd):/app" semgrep-runner /app/vulnerable-java-application-main
 
 Check the Scan Results at the json file created in the path.
 
-## **6. Next Steps:
+**## **5. Next Steps****
 Modify run_semgrep.sh to scan custom directories with custom languages.
 add more support to rules.
 Adjust the Dockerfile to include additional dependencies if needed.
